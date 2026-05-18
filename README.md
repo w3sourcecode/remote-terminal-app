@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="#-downloads">Downloads</a> •
+  <a href="#-first-time-setup">First-time setup</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-features">Features</a> •
   <a href="#-how-it-works">How it works</a> •
@@ -52,6 +53,38 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 | **iOS** | Xcode / TestFlight (coming soon) | Requires macOS + Apple developer setup |
 
 See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)** for all published desktop packages.
+
+---
+
+## 🆕 First-time setup
+
+Use this order the first time you install Remote Terminal.
+
+### Step 1 — Desktop agent (your PC)
+
+1. **Download** the [latest Windows portable zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-Windows-x64.zip) (or [build macOS on a Mac](releases/BUILD_MACOS.md)).
+2. **Unzip** the folder and run **`Remote Terminal.exe`** (Windows) or the Mac app from your build.
+3. On first launch, set a **join password** when prompted (recommended — required for Session ID pairing).
+4. The app stays in the **system tray**. Open the dashboard → **Pair & Connect**:
+   - **QR code** on the left (scan from your phone)
+   - **Session ID** on the right, formatted like `123 456 789`
+
+Keep the desktop agent running while you use the phone.
+
+### Step 2 — Mobile app (your phone)
+
+1. Install the Remote Terminal **Android or iOS** app (internal build / store when published).
+2. On first open, the app shows a **setup tour** — follow it to download the desktop agent and learn how to pair.
+3. Tap **Scan QR** and point the camera at the PC screen (fastest), **or** tap **Session ID**, enter the nine digits, then the **join password** from desktop Settings.
+4. After pairing, open **Terminal**, **Files**, or **Clipboard** from the session hub.
+
+Tap **Setup** on the mobile home screen anytime to replay the tour.
+
+### Step 3 — Stay connected
+
+- The phone **restores your session** when you reopen the app.
+- The desktop agent keeps running in the tray until you quit.
+- On Android home, press **back twice** to exit the app.
 
 ---
 
