@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="images/desktop-qr-dashboard.png" alt="Desktop agent showing QR pairing dashboard" width="720" />
+  <img src="images/desktop-qr-dashboard.png" alt="Desktop agent — Pair &amp; Connect dashboard with QR code and session ID" width="720" />
 </p>
 
 ---
@@ -45,7 +45,7 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 
 | Platform | Package | Notes |
 |----------|---------|--------|
-| **Windows 10/11** (x64) | [Remote-Terminal-0.1.8-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.8-Windows-x64.zip) | Portable folder — unzip and run `Remote Terminal.exe` |
+| **Windows 10/11** (x64) | [Remote-Terminal-0.1.9-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-Windows-x64.zip) | Portable folder — unzip and run `Remote Terminal.exe` |
 | **macOS 11+** (Apple Silicon) | [Build on Mac](releases/BUILD_MACOS.md) | DMG/ZIP built with `npm run build:mac` on a Mac |
 | **macOS 11+** (Intel) | [Build on Mac](releases/BUILD_MACOS.md) | Same build scripts, `x64` target |
 | **Android** | APK via internal build / Play (coming soon) | Built from the mobile project with Capacitor |
@@ -61,7 +61,7 @@ See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)**
 
 1. Download and unzip the **Windows** package (or install the **macOS** app from a build on your Mac).
 2. Run **Remote Terminal** — on first launch, set a **join password** (required for pairing).
-3. The tray icon appears; open the **dashboard** to see the **QR code** and **session ID**.
+3. The tray icon appears; open the **dashboard** → **Pair & Connect** to see the **QR code** and formatted **session ID** side by side.
 
 ### 2. Mobile (phone)
 
@@ -153,7 +153,7 @@ See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)**
 
 ### Pairing without QR
 
-1. On desktop, note the **9-digit session ID** on the dashboard.
+1. On desktop, note the **9-digit session ID** (shown as `123 456 789`) on the **Pair & Connect** tab.
 2. On mobile: **Session ID** → enter ID → **join password** from desktop Settings.
 3. Tap **Connect**.
 
