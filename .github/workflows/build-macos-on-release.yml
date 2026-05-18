@@ -1,0 +1,71 @@
+# Builds macOS DMGs when a release is published on this repo.
+#
+# Required secret: REMOTE_TERMINAL_SOURCE_PAT — PAT with repo scope for w3sourcecode/remote-terminal (private source)
+
+name: Attach macOS builds to release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. v0.1.9)"
+        required: true
+        default: "v0.1.9"
+
+permissions:
+  contents: write
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout private source
+        uses: actions/checkout@v4
+        with:
+          repository: w3sourcecode/remote-terminal
+          token: ${{ secrets.REMOTE_TERMINAL_SOURCE_PAT }}
+          path: source
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: source/desktop/package-lock.json
+
+      - name: Resolve version from tag
+        id: meta
+        run: |
+          TAG="${{ github.event.release.tag_name || inputs.tag }}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify package version
+        working-directory: source/desktop
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          if [ "$PKG_VERSION" != "${{ steps.meta.outputs.version }}" ]; then
+            echo "Source desktop/package.json is $PKG_VERSION but release tag is ${{ steps.meta.outputs.version }}"
+            echo "Push matching version to w3sourcecode/remote-terminal main before building."
+            exit 1
+          fi
+
+      - name: Install and build
+        working-directory: source/desktop
+        env:
+          SKIP_VERSION_BUMP: "1"
+        run: |
+          npm ci
+          npm run build:mac:release
+
+      - name: Upload DMGs to this release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          files: |
+            source/desktop/release-assets/*.dmg
+            source/desktop/release-assets/README-macOS.txt
+          fail_on_unmatched_files: true

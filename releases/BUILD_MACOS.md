@@ -1,6 +1,8 @@
 # Building macOS desktop packages
 
-macOS installers must be built **on a Mac** (code signing and `electron-builder` targets).
+**For most users:** download the pre-built DMGs from [GitHub Releases](https://github.com/w3sourcecode/remote-terminal-app/releases) (Apple Silicon and Intel). No npm required.
+
+**For maintainers:** macOS installers can be built on a Mac locally, or via GitHub Actions — see [RELEASE_CI.md](RELEASE_CI.md).
 
 ## Requirements
 

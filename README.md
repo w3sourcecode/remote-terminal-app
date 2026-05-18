@@ -47,8 +47,8 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 | Platform | Package | Notes |
 |----------|---------|--------|
 | **Windows 10/11** (x64) | [Remote-Terminal-0.1.9-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-Windows-x64.zip) | Portable folder — unzip and run `Remote Terminal.exe` |
-| **macOS 11+** (Apple Silicon) | [Build on Mac](releases/BUILD_MACOS.md) | DMG/ZIP built with `npm run build:mac` on a Mac |
-| **macOS 11+** (Intel) | [Build on Mac](releases/BUILD_MACOS.md) | Same build scripts, `x64` target |
+| **macOS 11+** (Apple Silicon) | [Remote-Terminal-0.1.9-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-arm64.dmg) | DMG — drag to Applications |
+| **macOS 11+** (Intel) | [Remote-Terminal-0.1.9-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-x64.dmg) | DMG for Intel Macs |
 | **Android** | APK via internal build / Play (coming soon) | Built from the mobile project with Capacitor |
 | **iOS** | Xcode / TestFlight (coming soon) | Requires macOS + Apple developer setup |
 
@@ -62,8 +62,8 @@ Use this order the first time you install Remote Terminal.
 
 ### Step 1 — Desktop agent (your PC)
 
-1. **Download** the [latest Windows portable zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-Windows-x64.zip) (or [build macOS on a Mac](releases/BUILD_MACOS.md)).
-2. **Unzip** the folder and run **`Remote Terminal.exe`** (Windows) or the Mac app from your build.
+1. **Download** the [Windows portable zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-Windows-x64.zip) or a **macOS DMG** ([Apple Silicon](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-arm64.dmg) · [Intel](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-x64.dmg)).
+2. **Windows:** unzip and run **`Remote Terminal.exe`**. **Mac:** open the DMG and drag **Remote Terminal** to Applications.
 3. On first launch, set a **join password** when prompted (recommended — required for Session ID pairing).
 4. The app stays in the **system tray**. Open the dashboard → **Pair & Connect**:
    - **QR code** on the left (scan from your phone)
