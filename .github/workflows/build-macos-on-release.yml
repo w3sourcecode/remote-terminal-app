@@ -13,6 +13,10 @@ on:
         description: "Release tag (e.g. v0.1.9)"
         required: true
         default: "v0.1.9"
+      source_ref:
+        description: "Branch or tag on w3sourcecode/remote-terminal to build"
+        required: true
+        default: "main"
 
 permissions:
   contents: write
@@ -27,7 +31,7 @@ jobs:
           repository: w3sourcecode/remote-terminal
           token: ${{ secrets.REMOTE_TERMINAL_SOURCE_PAT }}
           path: source
-          ref: main
+          ref: ${{ inputs.source_ref || 'main' }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
