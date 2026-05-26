@@ -1,17 +1,26 @@
 # Release packages
 
-## Latest
+## Latest (v0.1.13)
+
+### Windows x64
+
+| File | Format |
+|------|--------|
+| [Remote-Terminal-0.1.13-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-Windows-x64.zip) | Portable — unzip and run |
+| [Remote-Terminal-0.1.13-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-Windows-x64-Setup.exe) | NSIS installer |
+| [Remote-Terminal-0.1.13-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-WinNT-x64.exe) | WinNT / workstation installer |
+
+### macOS
 
 | File | Platform |
 |------|----------|
-| [Remote-Terminal-0.1.9-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-Windows-x64.zip) | Windows 10/11 x64 (portable) |
-| [Remote-Terminal-0.1.9-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-arm64.dmg) | macOS 11+ Apple Silicon |
-| [Remote-Terminal-0.1.9-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-x64.dmg) | macOS 11+ Intel |
+| [Remote-Terminal-0.1.13-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-macOS-arm64.dmg) | Apple Silicon |
+| [Remote-Terminal-0.1.13-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-macOS-x64.dmg) | Intel |
 
-## macOS (manual build)
+### Android
 
-CI publishes DMGs on each release. To build locally, see [BUILD_MACOS.md](BUILD_MACOS.md).
+[Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)
 
-## Verify checksum (optional)
+## macOS CI
 
-After download, compare file size (~144 MB for Windows portable x64 as of v0.1.9).
+DMGs are built on **GitHub Actions** when you run **Attach macOS builds to release**. See [RELEASE_CI.md](RELEASE_CI.md) and [BUILD_MACOS.md](BUILD_MACOS.md).

@@ -45,15 +45,31 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 
 ## 📥 Downloads
 
-| Platform | Package | Notes |
-|----------|---------|--------|
-| **Windows 10/11** (x64) | [Remote-Terminal-0.1.10-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.10-Windows-x64.zip) | Portable folder — unzip and run `Remote Terminal.exe` |
-| **macOS 11+** (Apple Silicon) | [Remote-Terminal-0.1.9-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-arm64.dmg) | DMG — drag to Applications |
-| **macOS 11+** (Intel) | [Remote-Terminal-0.1.9-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-x64.dmg) | DMG for Intel Macs |
-| **Android** | APK via internal build / Play (coming soon) | Built with Capacitor |
-| **iOS** | Xcode / TestFlight (coming soon) | Requires macOS + Apple developer setup |
+### Windows 10/11 (x64)
 
-See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)** for all published desktop packages.
+| Format | Download | Notes |
+|--------|----------|--------|
+| **Portable** (zip) | [Remote-Terminal-0.1.13-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-Windows-x64.zip) | Unzip and run `Remote Terminal.exe` — no installer |
+| **Setup** (NSIS) | [Remote-Terminal-0.1.13-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-Windows-x64-Setup.exe) | Guided installer; choose install folder |
+| **WinNT setup** | [Remote-Terminal-0.1.13-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-WinNT-x64.exe) | Same installer flow; labeled for workstation / WinNT deployments |
+
+### macOS 11+
+
+| Mac | Download | Notes |
+|-----|----------|--------|
+| **Apple Silicon** (M1/M2/M3/M4) | [Remote-Terminal-0.1.13-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-macOS-arm64.dmg) | Open DMG → drag to Applications |
+| **Intel** | [Remote-Terminal-0.1.13-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-macOS-x64.dmg) | For Intel Macs |
+
+First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open**, or allow in **System Settings → Privacy & Security**.
+
+### Mobile
+
+| Platform | Download | Notes |
+|----------|----------|--------|
+| **Android** | [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) | Requires the desktop agent on your PC |
+| **iOS** | TestFlight / App Store (coming soon) | Requires macOS + Apple developer setup to build locally |
+
+See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)** for all published packages and release notes.
 
 ---
 
@@ -63,8 +79,8 @@ Use this order the first time you install Remote Terminal.
 
 ### Step 1 — Desktop agent (your PC)
 
-1. **Download** the [Windows portable zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.10-Windows-x64.zip) or a **macOS DMG** ([Apple Silicon](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-arm64.dmg) · [Intel](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.9-macOS-x64.dmg)).
-2. **Windows:** unzip and run **`Remote Terminal.exe`**. **Mac:** open the DMG and drag **Remote Terminal** to Applications.
+1. **Download** a [Windows package](#-downloads) (portable zip or setup exe) or a **macOS DMG** (Apple Silicon or Intel).
+2. **Windows:** run the **setup exe** or unzip the portable zip and run **`Remote Terminal.exe`**. **Mac:** open the DMG and drag **Remote Terminal** to Applications.
 3. On first launch, set a **join password** when prompted (recommended — required for Session ID pairing).
 4. The app stays in the **system tray**. Open the dashboard → **Pair & Connect**:
    - **QR code** on the left (scan from your phone)
@@ -75,7 +91,7 @@ Keep the desktop agent running while you use the phone.
 
 ### Step 2 — Mobile app (your phone)
 
-1. Install the Remote Terminal **Android or iOS** app (internal build / store when published).
+1. Install **[Remote Terminal on Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)** (Android) or your iOS build when available.
 2. On first open, the app shows a **setup tour** — follow it to download the desktop agent and learn how to pair.
 3. Tap **Scan QR** and point the camera at the PC screen (fastest), **or** tap **Session ID**, enter the nine digits, then the **join password** from desktop Settings.
 4. After pairing, open **CMD**, **PowerShell**, **Files**, or **Clipboard** from the session hub.
@@ -95,7 +111,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 ### 1. Desktop (host PC)
 
-1. Download and unzip the **Windows** package (or install the **macOS** app from a build on your Mac).
+1. Download a **Windows** portable zip or setup exe (or install the **macOS** app from a DMG).
 2. Run **Remote Terminal** — on first launch, set a **join password** (recommended for pairing).
 3. The tray icon appears; open the **dashboard** → **Pair & Connect** to see the **QR code** and formatted **session ID** side by side.
 
@@ -108,7 +124,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 ### 2. Mobile (phone)
 
-1. Install the Remote Terminal mobile app (Android/iOS build).
+1. Install the app from [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) (Android).
 2. Scan the QR (encodes server + session) **or** enter session ID + join password.
 3. Open the **session hub** — choose **CMD**, **PowerShell**, **Files**, or **Clipboard**.
 
@@ -141,9 +157,9 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | 📁 **Remote files** | Browse drives and folders; upload, download, and delete on the connected PC |
 | 📋 **Clipboard sync** | Phone → PC and PC → phone (each side opt-in in session settings / desktop settings) |
 | 🔄 **Session restore** | Mobile reconnects from Home; desktop survives app backgrounding |
-| 📊 **Activity log** | Desktop records connects, commands, and file operations locally (SQLite) |
-| 🪟 **Windows & macOS agent** | Electron tray app with dashboard, bookmarks, clipboard history, settings |
-| 🤖 **Android & iOS client** | Capacitor app with terminal UI, files, clipboard screen, session settings |
+| 📊 **Activity log** | Desktop records connects, commands, and file operations locally |
+| 🪟 **Windows & macOS agent** | Tray app with dashboard, bookmarks, clipboard history, settings |
+| 🤖 **Android & iOS client** | Terminal UI, files, clipboard screen, session settings |
 | 📜 **Terminal UX** | Per-shell history on Windows, on-demand scroll controls, shortcut keys (Tab, Ctrl+C, arrows) |
 | ⚡ **HTTP file channel** | Large transfers use a dedicated HTTP path alongside SignalR |
 | 🛡️ **HTTPS backend** | Session tokens and hub traffic over TLS in production |
@@ -194,7 +210,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 ```text
 ┌─────────────┐     QR / Session ID      ┌─────────────┐
 │   Mobile    │ ◄──────────────────────► │   Backend   │
-│  (Angular)  │   SignalR + JWT + HTTP   │  (ASP.NET)  │
+│             │   SignalR + JWT + HTTP   │             │
 └──────┬──────┘                          └──────┬──────┘
        │                                          │
        │    terminal / files / clipboard          │
@@ -202,8 +218,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
                           │
                    ┌──────▼──────┐
                    │   Desktop   │
-                   │  (Electron) │
-                   │  + node-pty │
+                   │    agent    │
                    └─────────────┘
 ```
 
@@ -225,7 +240,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | Settings | Tray → **Settings** — join password, quit password, connection mode (cloud / local), auto-start |
 | Reconnect after sleep | Dashboard → **Reconnect now** if status shows offline |
 | Disconnect phones | Dashboard or tray → disconnect session |
-| View activity | Dashboard → **Activity** (local SQLite history) |
+| View activity | Dashboard → **Activity** (local history) |
 | Clipboard | Dashboard → **Clipboard** — phone → PC history; enable PC → phone sharing in settings |
 
 ### Mobile app
@@ -249,30 +264,19 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 ## 📊 Comparison
 
-| Capability | Remote Terminal | SSH + Termius | TeamViewer | Chrome Remote Desktop |
-|------------|-----------------|---------------|------------|------------------------|
-| Real terminal (PTY) | ✅ | ✅ | ❌ | ❌ |
-| Mobile-first UI | ✅ | ✅ | ❌ | ❌ |
-| QR / simple pairing | ✅ | ❌ | ❌ | ❌ |
-| Same-Wi-Fi local mode | ✅ | LAN only | ❌ | ❌ |
-| Remote file browser | ✅ | SFTP only | ✅ | ❌ |
-| Clipboard sync | ✅ | ❌ | ✅ | ❌ |
-| Join password gate | ✅ | Keys/password | ❌ | Google account |
-| Lightweight tray agent | ✅ | N/A | ❌ | ❌ |
-| No router port forward | ✅* | ❌ | ✅ | ✅ |
+| Capability | Remote Terminal | SSH + Termius |
+|------------|-----------------|---------------|
+| Real terminal (PTY) | ✅ | ✅ |
+| Mobile-first UI | ✅ | ✅ |
+| QR / simple pairing | ✅ | ❌ |
+| Same-Wi-Fi local mode | ✅ | LAN only |
+| Remote file browser | ✅ | SFTP only |
+| Clipboard sync | ✅ | ❌ |
+| Join password gate | ✅ | Keys/password |
+| Lightweight tray agent | ✅ | N/A |
+| No router port forward* | ✅ | ❌ |
 
 \*Cloud mode uses an outbound connection to your API. Local network mode uses the PC’s LAN address on the same Wi-Fi.
-
----
-
-## 🛠️ Tech stack
-
-| Component | Stack |
-|-----------|--------|
-| Backend | ASP.NET Core 10, SignalR (MessagePack), JWT, PostgreSQL, Redis |
-| Desktop | Electron, TypeScript, node-pty, SQLite history |
-| Mobile | Angular 21, Capacitor 8, SignalR client |
-| Transfers | HTTP file channel + hub control plane |
 
 ---
 
@@ -293,8 +297,11 @@ Yes — pick **CMD** or **PowerShell** from the session hub, or set a default in
 **How does clipboard sync work?**  
 Enable **Share with desktop** on the phone and **Share PC clipboard with phone** on the desktop. PC → phone copies appear in the mobile **Clipboard** screen; use **Copy to phone** or **Paste in terminal**.
 
+**Where is the Android app?**  
+[Google Play — Remote Terminal](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)
+
 **Where is macOS download?**  
-macOS builds must be produced **on a Mac** (Apple code signing). See [releases/BUILD_MACOS.md](releases/BUILD_MACOS.md).
+Use the **Apple Silicon** or **Intel DMG** links above. Builds are produced on GitHub Actions; see [releases/BUILD_MACOS.md](releases/BUILD_MACOS.md) if you need to rebuild.
 
 ---
 
