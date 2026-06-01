@@ -49,16 +49,16 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 
 | Format | Download | Notes |
 |--------|----------|--------|
-| **Portable** (zip) | [Remote-Terminal-0.1.13-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-Windows-x64.zip) | Unzip and run `Remote Terminal.exe` — no installer |
-| **Setup** (NSIS) | [Remote-Terminal-0.1.13-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-Windows-x64-Setup.exe) | Guided installer; choose install folder |
-| **WinNT setup** | [Remote-Terminal-0.1.13-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-WinNT-x64.exe) | Same installer flow; labeled for workstation / WinNT deployments |
+| **Portable** (zip) | [Remote-Terminal-0.1.14-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.14-Windows-x64.zip) | Unzip and run `Remote Terminal.exe` — no installer |
+| **Setup** (NSIS) | [Remote-Terminal-0.1.14-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.14-Windows-x64-Setup.exe) | Guided installer; choose install folder |
+| **WinNT setup** | [Remote-Terminal-0.1.14-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.14-WinNT-x64.exe) | Same installer flow; labeled for workstation / WinNT deployments |
 
 ### macOS 11+
 
 | Mac | Download | Notes |
 |-----|----------|--------|
-| **Apple Silicon** (M1/M2/M3/M4) | [Remote-Terminal-0.1.13-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-macOS-arm64.dmg) | Open DMG → drag to Applications |
-| **Intel** | [Remote-Terminal-0.1.13-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.13-macOS-x64.dmg) | For Intel Macs |
+| **Apple Silicon** (M1/M2/M3/M4) | [Remote-Terminal-0.1.14-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.14-macOS-arm64.dmg) | Open DMG → drag to Applications |
+| **Intel** | [Remote-Terminal-0.1.14-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-0.1.14-macOS-x64.dmg) | For Intel Macs |
 
 First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open**, or allow in **System Settings → Privacy & Security**.
 
@@ -67,7 +67,7 @@ First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open*
 | Platform | Download | Notes |
 |----------|----------|--------|
 | **Android** | [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) | Requires the desktop agent on your PC |
-| **iOS** | TestFlight / App Store (coming soon) | Requires macOS + Apple developer setup to build locally |
+| **iOS** | [App Store — Remote Terminal Pro](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841) | Requires the desktop agent on your PC |
 
 See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)** for all published packages and release notes.
 
@@ -91,7 +91,7 @@ Keep the desktop agent running while you use the phone.
 
 ### Step 2 — Mobile app (your phone)
 
-1. Install **[Remote Terminal on Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)** (Android) or your iOS build when available.
+1. Install **[Remote Terminal on Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)** (Android) or **[Remote Terminal Pro on the App Store](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841)** (iOS).
 2. On first open, the app shows a **setup tour** — follow it to download the desktop agent and learn how to pair.
 3. Tap **Scan QR** and point the camera at the PC screen (fastest), **or** tap **Session ID**, enter the nine digits, then the **join password** from desktop Settings.
 4. After pairing, open **CMD**, **PowerShell**, **Files**, or **Clipboard** from the session hub.
@@ -124,7 +124,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 ### 2. Mobile (phone)
 
-1. Install the app from [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) (Android).
+1. Install from [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) (Android) or the [App Store](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841) (iOS).
 2. Scan the QR (encodes server + session) **or** enter session ID + join password.
 3. Open the **session hub** — choose **CMD**, **PowerShell**, **Files**, or **Clipboard**.
 
@@ -299,6 +299,9 @@ Enable **Share with desktop** on the phone and **Share PC clipboard with phone**
 
 **Where is the Android app?**  
 [Google Play — Remote Terminal](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)
+
+**Where is the iOS app?**  
+[App Store — Remote Terminal Pro](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841)
 
 **Where is macOS download?**  
 Use the **Apple Silicon** or **Intel DMG** links above. Builds are produced on GitHub Actions; see [releases/BUILD_MACOS.md](releases/BUILD_MACOS.md) if you need to rebuild.

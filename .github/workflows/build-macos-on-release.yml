@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag (e.g. v0.1.9)"
+        description: "Release tag (e.g. v0.1.14)"
         required: true
-        default: "v0.1.9"
+        default: "v0.1.14"
       source_ref:
         description: "Branch or tag on w3sourcecode/remote-terminal to build"
         required: true
