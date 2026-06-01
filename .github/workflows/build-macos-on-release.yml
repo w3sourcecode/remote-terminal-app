@@ -16,7 +16,7 @@ on:
       source_ref:
         description: "Branch or tag on w3sourcecode/remote-terminal to build"
         required: true
-        default: "main"
+        default: "feature/performance-fixes"
 
 permissions:
   contents: write
