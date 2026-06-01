@@ -14,9 +14,9 @@ Optional (source repo `remote-terminal` only): `RELEASE_PUBLISH_TOKEN` — PAT w
 
 ## Attach Mac builds to an existing release
 
-1. Ensure `desktop/package.json` version on `remote-terminal` matches the release (e.g. `0.1.14` for tag `v0.1.14`). Merge your release branch into **main** when ready.
+1. Ensure `desktop/package.json` version on `remote-terminal` matches the release (e.g. `1.1.2` for tag `v1.1.2`). Merge your release branch into **main** when ready.
 2. Open **Actions** → **Attach macOS builds to release** → **Run workflow**.
-3. Enter tag `v0.1.14` and **source_ref** (branch to build, e.g. `main` or your release branch).
+3. Enter tag `v1.1.2` and **source_ref** (branch to build, e.g. `main` or your release branch).
 
 Artifacts uploaded:
 
