@@ -203,9 +203,9 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
   <img src="images/mobile-files.png" alt="Remote file browser" width="240" />
 </p>
 <p align="center">
-  <img src="images/claude.jpeg.png" alt="PowerShell terminal" width="240" />
+  <img src="images/claude.jpeg" alt="terminal claude" width="240" />
   &nbsp;&nbsp;
-  <img src="images/opencode.png" alt="CMD terminal" width="240" />
+  <img src="images/opencode.jpeg" alt="terminal opencode" width="240" />
 </p>
 
 ---
