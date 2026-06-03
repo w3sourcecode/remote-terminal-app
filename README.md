@@ -68,6 +68,8 @@ First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open*
 |----------|----------|--------|
 | **Android** | [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) | Requires the desktop agent on your PC |
 | **iOS** | [App Store — Remote Terminal Pro](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841) | Requires the desktop agent on your PC |
+| **Web** | [Web — Remote Terminal ]([https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841](https://w3sourcecode.github.io/)) | Requires the desktop agent on your PC |
+
 
 See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)** for all published packages and release notes.
 
@@ -215,7 +217,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 ```text
 ┌─────────────┐     QR / Session ID      ┌─────────────┐
 │   Mobile    │ ◄──────────────────────► │   Backend   │
-│             │   SignalR + JWT + HTTP   │             │
+│             │  websocket + JWT + HTTP  │             │
 └──────┬──────┘                          └──────┬──────┘
        │                                          │
        │    terminal / files / clipboard          │
