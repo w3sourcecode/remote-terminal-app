@@ -1,21 +1,21 @@
 # Release packages
 
-## Latest (v1.1.2)
+## Latest (v1.1.5)
 
 ### Windows x64
 
 | File | Format |
 |------|--------|
-| [Remote-Terminal-1.1.2-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.2-Windows-x64.zip) | Portable — unzip and run |
-| [Remote-Terminal-1.1.2-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.2-Windows-x64-Setup.exe) | NSIS installer |
-| [Remote-Terminal-1.1.2-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.2-WinNT-x64.exe) | WinNT / workstation installer |
+| [Remote-Terminal-1.1.5-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-Windows-x64.zip) | Portable — unzip and run |
+| [Remote-Terminal-1.1.5-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-Windows-x64-Setup.exe) | NSIS installer |
+| [Remote-Terminal-1.1.5-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-WinNT-x64.exe) | WinNT / workstation installer |
 
 ### macOS
 
 | File | Platform |
 |------|----------|
-| [Remote-Terminal-1.1.2-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.2-macOS-arm64.dmg) | Apple Silicon |
-| [Remote-Terminal-1.1.2-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.2-macOS-x64.dmg) | Intel |
+| [Remote-Terminal-1.1.5-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-macOS-arm64.dmg) | Apple Silicon |
+| [Remote-Terminal-1.1.5-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-macOS-x64.dmg) | Intel |
 
 ### Mobile
 
