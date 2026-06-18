@@ -49,16 +49,15 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 
 | Format | Download | Notes |
 |--------|----------|--------|
-| **Portable** (zip) | [Remote-Terminal-1.1.5-Windows-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-Windows-x64.zip) | Unzip and run `Remote Terminal.exe` — no installer |
-| **Setup** (NSIS) | [Remote-Terminal-1.1.5-Windows-x64-Setup.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-Windows-x64-Setup.exe) | Guided installer; choose install folder |
-| **WinNT setup** | [Remote-Terminal-1.1.5-WinNT-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-WinNT-x64.exe) | Same installer flow; labeled for workstation / WinNT deployments |
+| **Portable** (zip) | [RemoteTerminal-Portable-x64.zip](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/RemoteTerminal-Portable-x64.zip) | Unzip and run `Remote Terminal.exe` — no installer |
+| **Setup** (NSIS) | [RemoteTerminal-Setup-x64.exe](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/RemoteTerminal-Setup-x64.exe) | Guided installer; choose install folder |
 
 ### macOS 11+
 
 | Mac | Download | Notes |
 |-----|----------|--------|
-| **Apple Silicon** (M1/M2/M3/M4) | [Remote-Terminal-1.1.5-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-macOS-arm64.dmg) | Open DMG → drag to Applications |
-| **Intel** | [Remote-Terminal-1.1.5-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/Remote-Terminal-1.1.5-macOS-x64.dmg) | For Intel Macs |
+| **Apple Silicon** (M1/M2/M3/M4) | [RemoteTerminal-macOS-arm64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/RemoteTerminal-macOS-arm64.dmg) | Open DMG → drag to Applications |
+| **Intel** | [RemoteTerminal-macOS-x64.dmg](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/RemoteTerminal-macOS-x64.dmg) | For Intel Macs |
 
 First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open**, or allow in **System Settings → Privacy & Security**.
 
