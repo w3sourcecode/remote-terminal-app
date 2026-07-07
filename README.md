@@ -69,11 +69,6 @@ First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open*
 | **iOS** | [App Store — Remote Terminal Pro](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841) | Requires the desktop agent on your PC |
 | **Web** | [In Browser ](https://remote-terminal.github.io/) | Requires the desktop agent on your PC |
 
-
-See **[Releases](https://github.com/w3sourcecode/remote-terminal-app/releases)** for all published packages and release notes.
-
----
-
 ## 🆕 First-time setup
 
 Use this order the first time you install Remote Terminal.

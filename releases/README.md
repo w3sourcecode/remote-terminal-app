@@ -1,6 +1,6 @@
 # Release packages
 
-## Latest (v1.1.1)
+## Latest (v1.1.3)
 
 ### Windows x64
 
@@ -25,4 +25,5 @@
 
 ## macOS CI
 
-DMGs are built on **GitHub Actions** when you run **Publish desktop release (macOS)**. See [RELEASE_CI.md](RELEASE_CI.md) and [BUILD_MACOS.md](BUILD_MACOS.md).
+DMGs are built on **GitHub Actions** via **Publish desktop release (macOS)**. See [RELEASE_CI.md](RELEASE_CI.md) and [BUILD_MACOS.md](BUILD_MACOS.md).
+
