@@ -1,6 +1,6 @@
 # Release packages
 
-## Latest (v1.1.21)
+## Latest (v1.1.22)
 
 ### Windows x64
 
