@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Your PC terminal in your pocket.</strong><br />
-  Pair with a QR code, run PowerShell or CMD, browse files, sync clipboard text, and stay connected — securely.
+  Pair with a QR code, run PowerShell or CMD, browse files, manage tasks, programs and services, sync clipboard text, and stay connected — securely.
 </p>
 
 <p align="center">
@@ -34,6 +34,9 @@ Use it when you are away from your desk but still need to:
 - Run **PowerShell** or **CMD** on a Windows PC (pick either from the session hub)
 - Use **bash/zsh** on macOS
 - **Upload and download files** without SFTP
+- See what is running and **End** a stuck task with the **Task Manager**
+- **Start, stop and restart services** (Windows services, systemd units, macOS launchd jobs)
+- **Launch and close installed programs** on the PC
 - **Sync clipboard text** between phone and PC (each side opt-in)
 - Keep a **persistent session** when you switch apps on your phone
 
@@ -90,7 +93,7 @@ Keep the desktop agent running while you use the phone.
 1. Install **[Remote Terminal on Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal)** (Android) or **[Remote Terminal Pro on the App Store](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841)** (iOS).
 2. On first open, the app shows a **setup tour** — follow it to download the desktop agent and learn how to pair.
 3. Tap **Scan QR** and point the camera at the PC screen (fastest), **or** tap **Session ID**, enter the nine digits, then the **join password** from desktop Settings.
-4. After pairing, open **CMD**, **PowerShell**, **Files**, or **Clipboard** from the session hub.
+4. After pairing, open **CMD**, **PowerShell**, **Files**, **Programs**, **Task Manager**, **Services** or **Clipboard** from the session hub.
 
 Tap **Setup** on the mobile home screen anytime to replay the tour.
 
@@ -122,7 +125,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 1. Install from [Google Play](https://play.google.com/store/apps/details?id=com.billten.remoteterminal) (Android) or the [App Store](https://apps.apple.com/pk/app/remote-terminal-pro/id6771671841) (iOS).
 2. Scan the QR (encodes server + session) **or** enter session ID + join password.
-3. Open the **session hub** — choose **CMD**, **PowerShell**, **Files**, or **Clipboard**.
+3. Open the **session hub** — choose **CMD**, **PowerShell**, **Files**, **Programs**, **Task Manager**, **Services** or **Clipboard**.
 
 <p align="center">
   <img src="images/mobile-home.png" alt="Mobile home — saved sessions, Scan QR, Session ID" width="260" />
@@ -157,6 +160,13 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | 🪟 **Windows & macOS agent** | Tray app with dashboard, bookmarks, clipboard history, settings |
 | 🤖 **Android & iOS client** | Terminal UI, files, clipboard screen, session settings |
 | 📜 **Terminal UX** | Per-shell history on Windows, on-demand scroll controls, shortcut keys (Tab, Ctrl+C, arrows) |
+| ✂️ **Select, copy & paste** | Long-press a word, drag the handles, then **Copy**, **All**, **Paste** or **Done**; multi-line pastes show a preview first |
+| 🎨 **19 terminal themes** | Restyle the whole terminal screen — Dracula, One Dark, Monokai, Nord, Tokyo Night, Catppuccin, Gruvbox, Solarized, GitHub and terminal-app looks such as Windows Terminal, PowerShell, Ubuntu and macOS Terminal. Eight offline monospace fonts included |
+| 📊 **Task Manager** | Live CPU and memory, searchable and sortable task list grouped by program. **End** asks a program to close, like closing its window. Protected system tasks are refused by the agent |
+| 🧩 **Services** | List, search and filter services; **Start**, **Stop** or **Restart** them. Stop and Restart ask first, critical services are locked by the agent, and one slow service never blocks the others. Can be switched off in the desktop settings |
+| 🚀 **Programs** | Browse installed programs and launch or close them from the phone |
+| 🐧 **Linux agent (headless)** | Run the agent on a Linux server or VPS with bash, controlled with `remote-terminal config`, and install it as a systemd service so it restarts after a reboot or crash |
+| ⬆️ **Updates** | Windows installs update from **About → Check for updates**, with progress shown in place |
 | ⚡ **HTTP file channel** | Large transfers use a dedicated HTTP path alongside SignalR |
 | 🛡️ **HTTPS backend** | Session tokens and hub traffic over TLS in production |
 
@@ -225,7 +235,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 1. The **desktop agent** registers a session and displays a QR code (and pairing token when a join password is set).
 2. The **mobile app** scans the QR (or enters session ID + join password).
-3. The **API** issues a session token; both sides connect to **SignalR** hubs (terminal, files, clipboard).
+3. The **API** issues a session token; both sides connect to **SignalR** hubs (terminal, files, clipboard, programs, task manager, services). Each feature has its own connection, so a slow service list never stalls your terminal.
 4. Terminal keystrokes and output are relayed to a local **PTY** on the PC.
 5. File bytes use **HTTP** endpoints for throughput; control messages stay on the hub.
 
@@ -240,6 +250,8 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | Open dashboard | Tray icon → **Show QR** / menu **Open dashboard** |
 | Settings | Tray → **Settings** — join password, quit password, connection mode (cloud / local), auto-start |
 | Reconnect after sleep | Dashboard → **Reconnect now** if status shows offline |
+| Check for updates | Windows: **About → Check for updates** |
+| Allow service control | Settings → turn **Allow service control from phone** on or off |
 | Disconnect phones | Dashboard or tray → disconnect session |
 | View activity | Dashboard → **Activity** (local history) |
 | Clipboard | Dashboard → **Clipboard** — phone → PC history; enable PC → phone sharing in settings |
@@ -249,9 +261,12 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | Screen | What you can do |
 |--------|-----------------|
 | **Home** | Scan QR, enter session ID, open saved sessions (online / closed) |
-| **Session hub** | **CMD**, **PowerShell**, **Files**, **Clipboard**; gear opens session settings |
-| **Terminal** | Run commands; recent commands; scroll controls; Tab / Ctrl+C / arrow keys |
+| **Session hub** | **CMD**, **PowerShell**, **Files**, **Programs**, **Task Manager**, **Services**, **Clipboard**; gear opens session settings |
+| **Terminal** | Run commands; recent commands; scroll controls; Tab / Ctrl+C / arrow keys; select, copy and paste; theme picker |
 | **Files** | Browse remote folders; upload & download to device Downloads |
+| **Programs** | Browse installed programs; launch or close them on the PC |
+| **Task Manager** | Live CPU and memory, search and sort tasks, **End** a task (turn on **Live** for continuous updates) |
+| **Services** | Search, filter and sort services; **Start**, **Stop**, **Restart** with confirmation; locked rows are critical services |
 | **Clipboard** | Latest from PC; **Copy to phone** or **Paste in terminal**; history |
 | **Session settings** | Share/receive clipboard, auto-sync to phone, default Windows shell |
 
@@ -273,6 +288,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | Same-Wi-Fi local mode | ✅ | LAN only |
 | Remote file browser | ✅ | SFTP only |
 | Clipboard sync | ✅ | ❌ |
+| Task manager and service control | ✅ | ❌ |
 | Join password gate | ✅ | Keys/password |
 | Lightweight tray agent | ✅ | N/A |
 | No router port forward* | ✅ | ❌ |
@@ -294,6 +310,12 @@ So random devices cannot attach to your session if they guess the session ID.
 
 **Can I use PowerShell and cmd on Windows?**  
 Yes — pick **CMD** or **PowerShell** from the session hub, or set a default in **Session settings**.
+
+**Is it safe to stop services and end tasks from my phone?**  
+The desktop agent enforces the rules itself, not just the app: critical services and protected system tasks are refused, Stop and Restart ask for confirmation, and tasks owned by other users need the agent to run as administrator. Service control can be turned off in the agent's settings.
+
+**Does it run on Linux?**  
+Yes, as a headless agent for servers and VPSes (bash, `remote-terminal config`, optional systemd service). The public downloads on this page cover Windows and macOS.
 
 **How does clipboard sync work?**  
 Enable **Share with desktop** on the phone and **Share PC clipboard with phone** on the desktop. PC → phone copies appear in the mobile **Clipboard** screen; use **Copy to phone** or **Paste in terminal**.
