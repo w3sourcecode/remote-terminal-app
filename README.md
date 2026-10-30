@@ -27,12 +27,12 @@
 
 ## 🎯 Purpose
 
-**Remote Terminal** lets you control a real shell on your Windows or Mac computer from your **Android or iOS** phone.
+**Remote Terminal** lets you control a real shell on your Windows, Mac or Linux computer from your **Android or iOS** phone.
 
 Use it when you are away from your desk but still need to:
 
 - Run **PowerShell** or **CMD** on a Windows PC (pick either from the session hub)
-- Use **bash/zsh** on macOS
+- Use **bash/zsh** on macOS and Linux, including headless servers and VPSes
 - **Upload and download files** without SFTP
 - See what is running and **End** a stuck task with the **Task Manager**
 - **Start, stop and restart services** (Windows services, systemd units, macOS launchd jobs)
@@ -64,6 +64,21 @@ The desktop app runs in the **system tray**, shows a **QR code** for pairing, an
 
 First launch on unsigned Mac builds: right-click **Remote Terminal** → **Open**, or allow in **System Settings → Privacy & Security**.
 
+### Linux (x64) — Debian / Ubuntu
+
+| Package | Download | Notes |
+|---------|----------|--------|
+| **Debian package** (.deb) | [RemoteTerminal-Linux-x64.deb](https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/RemoteTerminal-Linux-x64.deb) | Works on servers over SSH (headless) and on Linux desktops |
+
+```bash
+curl -fL -o remote-terminal.deb https://github.com/w3sourcecode/remote-terminal-app/releases/latest/download/RemoteTerminal-Linux-x64.deb
+sudo apt install ./remote-terminal.deb     # use apt, not dpkg -i, so dependencies are installed
+remote-terminal --headless                 # prints a QR code and 9-digit pairing code
+sudo remote-terminal service install       # optional: start at boot, restart on crash
+```
+
+Scan the QR code with the mobile app to pair. Full instructions, settings and troubleshooting: **[Linux guide](LINUX.md)**.
+
 ### Mobile
 
 | Platform | Download | Notes |
@@ -78,8 +93,8 @@ Use this order the first time you install Remote Terminal.
 
 ### Step 1 — Desktop agent (your PC)
 
-1. **Download** a [Windows package](#-downloads) (portable zip or setup exe) or a **macOS DMG** (Apple Silicon or Intel).
-2. **Windows:** run the **setup exe** or unzip the portable zip and run **`Remote Terminal.exe`**. **Mac:** open the DMG and drag **Remote Terminal** to Applications.
+1. **Download** a [Windows package](#-downloads) (portable zip or setup exe), a **macOS DMG** (Apple Silicon or Intel), or the **Linux .deb** (see the [Linux guide](LINUX.md)).
+2. **Windows:** run the **setup exe** or unzip the portable zip and run **`Remote Terminal.exe`**. **Mac:** open the DMG and drag **Remote Terminal** to Applications. **Linux:** `sudo apt install ./remote-terminal.deb`, then run `remote-terminal` (desktop) or `remote-terminal --headless` (server).
 3. On first launch, set a **join password** when prompted (recommended — required for Session ID pairing).
 4. The app stays in the **system tray**. Open the dashboard → **Pair & Connect**:
    - **QR code** on the left (scan from your phone)
@@ -110,7 +125,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 
 ### 1. Desktop (host PC)
 
-1. Download a **Windows** portable zip or setup exe (or install the **macOS** app from a DMG).
+1. Download a **Windows** portable zip or setup exe (install the **macOS** app from a DMG, or the **Linux** .deb — see the [Linux guide](LINUX.md)).
 2. Run **Remote Terminal** — on first launch, set a **join password** (recommended for pairing).
 3. The tray icon appears; open the **dashboard** → **Pair & Connect** to see the **QR code** and formatted **session ID** side by side.
 
@@ -165,7 +180,7 @@ Tap **Setup** on the mobile home screen anytime to replay the tour.
 | 📊 **Task Manager** | Live CPU and memory, searchable and sortable task list grouped by program. **End** asks a program to close, like closing its window. Protected system tasks are refused by the agent |
 | 🧩 **Services** | List, search and filter services; **Start**, **Stop** or **Restart** them. Stop and Restart ask first, critical services are locked by the agent, and one slow service never blocks the others. Can be switched off in the desktop settings |
 | 🚀 **Programs** | Browse installed programs and launch or close them from the phone |
-| 🐧 **Linux agent (headless)** | Run the agent on a Linux server or VPS with bash, controlled with `remote-terminal config`, and install it as a systemd service so it restarts after a reboot or crash |
+| 🐧 **Linux agent (headless)** | Run the agent on a Linux server or VPS ([download and guide](LINUX.md)) with bash, controlled with `remote-terminal config`, and install it as a systemd service so it restarts after a reboot or crash |
 | ⬆️ **Updates** | Windows installs update from **About → Check for updates**, with progress shown in place |
 | ⚡ **HTTP file channel** | Large transfers use a dedicated HTTP path alongside SignalR |
 | 🛡️ **HTTPS backend** | Session tokens and hub traffic over TLS in production |
@@ -315,7 +330,7 @@ Yes — pick **CMD** or **PowerShell** from the session hub, or set a default in
 The desktop agent enforces the rules itself, not just the app: critical services and protected system tasks are refused, Stop and Restart ask for confirmation, and tasks owned by other users need the agent to run as administrator. Service control can be turned off in the agent's settings.
 
 **Does it run on Linux?**  
-Yes, as a headless agent for servers and VPSes (bash, `remote-terminal config`, optional systemd service). The public downloads on this page cover Windows and macOS.
+Yes, as a headless agent for servers and VPSes (bash, `remote-terminal config`, optional systemd service). Download the [.deb package](#linux-x64--debian--ubuntu) for Debian and Ubuntu (x64) and follow the [Linux guide](LINUX.md).
 
 **How does clipboard sync work?**  
 Enable **Share with desktop** on the phone and **Share PC clipboard with phone** on the desktop. PC → phone copies appear in the mobile **Clipboard** screen; use **Copy to phone** or **Paste in terminal**.
@@ -328,6 +343,9 @@ Enable **Share with desktop** on the phone and **Share PC clipboard with phone**
 
 **Where is macOS download?**  
 Use the **Apple Silicon** or **Intel DMG** links above. Builds are produced on GitHub Actions; see [releases/BUILD_MACOS.md](releases/BUILD_MACOS.md) if you need to rebuild.
+
+**Where is the Linux download?**  
+Use the **.deb** link in [Downloads](#-downloads). It needs Debian, Ubuntu or a derivative on x64; install it with `apt`, not `dpkg -i`. See the [Linux guide](LINUX.md).
 
 ---
 
